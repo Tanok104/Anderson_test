@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<body>
+	<h1>Тестовое задание Рубан Татьяны на позицию QA Automation Trainee, г. Чернигов</h1>
+	<h2>Задание выполнено на языке JavaScript</h2>
+	<ol>
+	<li>
+	<p>Составить алгоритм: если введенное число больше 7, то вывести “Привет”</p>
+	<button id="task1">Выполнение первого задания</button>
+	</li>
+	<li>
+	<p>Составить алгоритм: если введенное имя совпадает с Вячеслав, то вывести “Привет, Вячеслав”, если нет, то вывести "Нет такого имени"</p>
+	<button id="task2">Выполнение второго задания</button>
+	</li>
+	<li>
+	<p>Составить алгоритм: на входе есть числовой массив, необходимо вывести элементы массива кратные 3</p>
+	<button id="task3">Выполнение третьего задания</button>
+	</li>
+	<li>
+	<div>
+	<p>Дана скобочная последовательность: [((())()(())]]</p>
+	<ul>
+	<li>Можно ли считать эту последовательность правильной?</li>
+	<li>Если ответ на предыдущий вопрос “нет” - то что необходимо в ней изменить, чтоб она стала правильной?</li>
+	</ul>
+	</div>
+	<div>
+	<p><b>Ответ:</b></p>
+	<p>Такую последовательность нельзя считать правильной, т.к. первая открытая круглая скобка закрывается квадратной скобкой.</p>
+	<p>Для того чтобы последовательность стала правильной, необходимо первую закрывающую квадратную скобку заменить на закрывающую круглую скобку. Т.е. последовательность должна выглядеть так: [((())()(()))]</p>
+	</div>
+	</li>
+	<ol>
+	
+	
+	<script>
+	function numSeven(){
+	let num = prompt("Введите любое число:");
+	if (num > 7){
+	alert("Привет");
+	}
+	};
+  
+  
+	function checkName(){
+	let name = prompt("Введите имя:");
+	if (name == "Вячеслав"){
+	alert("Привет, Вячеслав");
+	} else if (name == null){
+	alert("Вы не ввели имя");
+	} else {
+	alert("Нет такого имени");
+	};
+	};
+  
+  
+	function arrThree(){
+	let strArr = prompt("Введите числа через запятую");
+	if (strArr){
+	let arrArr = strArr.split(",");
+	let newArr = [];
+	for (let i = 0; i <= arrArr.length; i++){
+	if (arrArr[i]%3 == 0 && arrArr[i] != 0){
+	newArr.push(arrArr[i]);
+	} 
+	};
+	if (newArr.length > 0){
+	alert(newArr);
+	} else {
+	alert("В массиве нет элементов кратных трем.");
+	}
+	} else {
+	alert("Вы не задали массив");
+	}
+	};
+  
+  
+ let task1 = document.getElementById("task1");
+ task1.addEventListener("click", numSeven, false);
+ 
+ let task2 = document.getElementById("task2");
+ task2.addEventListener("click", checkName, false);
+ 
+ let task3 = document.getElementById("task3");
+ task3.addEventListener("click", arrThree, false);
+  </script>
+  
+  
+  </body>
+</html>
